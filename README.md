@@ -13,6 +13,15 @@ This is a template for creating applications using Next.js 14 (app directory) an
 - [TypeScript](https://www.typescriptlang.org/)
 - [Framer Motion](https://www.framer.com/motion/)
 - [next-themes](https://github.com/pacocoursey/next-themes)
+- [Nodemailer](https://nodemailer.com/) - For email functionality
+
+## Features
+
+- Responsive design
+- Dark/Light mode
+- Portfolio sections (About, Projects, Resume, Contact)
+- Resume PDF generation
+- **Contact form with email functionality**
 
 ## How to Use
 
@@ -32,6 +41,16 @@ You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
 npm install
 ```
 
+### Configure environment variables
+
+Copy the `.env.example` file to `.env.local` and update the values according to your needs:
+
+```bash
+cp .env.example .env.local
+```
+
+See [EMAIL_SETUP.md](./EMAIL_SETUP.md) for detailed instructions on configuring the email functionality.
+
 ### Run the development server
 
 ```bash
@@ -47,6 +66,16 @@ public-hoist-pattern[]=*@heroui/*
 ```
 
 After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
+
+## Email Functionality
+
+The portfolio includes a working contact form that sends emails via SMTP. To use this feature:
+
+1. Configure your email provider settings in `.env.local`
+2. Test your configuration using the test endpoint
+3. The contact form in the Contact section will now send emails
+
+For detailed setup instructions, see [EMAIL_SETUP.md](./EMAIL_SETUP.md).
 
 ## License
 

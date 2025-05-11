@@ -3,11 +3,11 @@
 import { FC } from "react";
 import { VisuallyHidden } from "@react-aria/visually-hidden";
 import { SwitchProps, useSwitch } from "@heroui/switch";
-import { useTheme } from "next-themes";
 import { useIsSSR } from "@react-aria/ssr";
 import clsx from "clsx";
 
 import { SunFilledIcon, MoonFilledIcon } from "@/components/icons";
+import { useThemeWithFallback } from "./theme-provider";
 
 export interface ThemeSwitchProps {
   className?: string;
@@ -18,7 +18,7 @@ export const ThemeSwitch: FC<ThemeSwitchProps> = ({
   className,
   classNames,
 }) => {
-  const { theme, setTheme } = useTheme();
+  const { theme, setTheme } = useThemeWithFallback();
   const isSSR = useIsSSR();
 
   const onChange = () => {
