@@ -1,82 +1,110 @@
-# Next.js & HeroUI Template
+# Portfolio 2025
 
-This is a template for creating applications using Next.js 14 (app directory) and HeroUI (v2).
-
-[Try it on CodeSandbox](https://githubbox.com/heroui-inc/heroui/next-app-template)
-
-## Technologies Used
-
-- [Next.js 14](https://nextjs.org/docs/getting-started)
-- [HeroUI v2](https://heroui.com/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Tailwind Variants](https://tailwind-variants.org)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Framer Motion](https://www.framer.com/motion/)
-- [next-themes](https://github.com/pacocoursey/next-themes)
-- [Nodemailer](https://nodemailer.com/) - For email functionality
+A modern, interactive portfolio website built with Next.js 14, Three.js and HeroUI.
 
 ## Features
 
-- Responsive design
-- Dark/Light mode
-- Portfolio sections (About, Projects, Resume, Contact)
-- Resume PDF generation
-- **Contact form with email functionality**
+- **Multi-language Support**: Full internationalization with English and Spanish, automatically detecting browser language
+- **Interactive 3D Animations**: Engaging Three.js animations that respond to mouse position in the viewport
+- **Dynamic Resume Generation**: PDF resume generated based on the selected language
+- **Dark/Light Mode**: Elegant theme switching with persistent user preference
+- **Responsive Design**: Fully responsive layout that works on all devices
+- **Modern UI Components**: Built with HeroUI and TailwindCSS for a sleek design
 
-## How to Use
+## Technologies Used
 
-### Use the template with create-next-app
+- [Next.js 14](https://nextjs.org/docs) - React framework with App Router
+- [Three.js](https://threejs.org/) - 3D graphics library for immersive animations
+- [HeroUI](https://heroui.com/) - UI component library
+- [TailwindCSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [TypeScript](https://www.typescriptlang.org/) - Static type checking
+- [Framer Motion](https://www.framer.com/motion/) - Animation library
+- [next-themes](https://github.com/pacocoursey/next-themes) - Theme management
+- [i18next](https://www.i18next.com/) - Internationalization framework
 
-To create a new project based on this template using `create-next-app`, run the following command:
+## Project Structure
 
-```bash
-npx create-next-app -e https://github.com/heroui-inc/next-app-template
+```
+├── app/               # Next.js app directory
+│   ├── i18n/          # Internationalization configurations
+│   ├── api/           # API routes
+│   └── [sections]/    # Various section pages
+├── components/        # React components
+├── config/            # Configuration files
+│   ├── i18n.ts        # i18n configuration
+│   ├── resume.ts      # Resume data
+│   ├── personal-data.ts # Personal information
+│   └── theme.ts       # Theme configuration
+└── public/            # Static assets
 ```
 
-### Install dependencies
+## Getting Started
 
-You can use one of them `npm`, `yarn`, `pnpm`, `bun`, Example using `npm`:
+### Prerequisites
+
+- Node.js 18.x or higher
+- npm, yarn, or pnpm
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/portfolio-2025.git
+   cd portfolio-2025
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn install
+   # or
+   pnpm install
+   ```
+
+3. Configure environment variables:
+   ```bash
+   cp template.env .env.local
+   ```
+   Edit `.env.local` with your personal information.
+
+4. Run the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   # or
+   pnpm dev
+   ```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+## Customization
+
+### Personal Information
+
+Edit the `config/personal-data.ts` file to update your personal information.
+
+### Resume Content
+
+Modify the `config/resume.ts` file to update your resume information. The PDF generation will use this data.
+
+### Theme Customization
+
+Adjust the theme settings in `config/theme.ts` to customize colors and other theme-related properties.
+
+## Deployment
+
+This project can be deployed on [Vercel](https://vercel.com/), [Netlify](https://www.netlify.com/), or any other platform that supports Next.js.
 
 ```bash
-npm install
+npm run build
+# or
+yarn build
+# or
+pnpm build
 ```
-
-### Configure environment variables
-
-Copy the `.env.example` file to `.env.local` and update the values according to your needs:
-
-```bash
-cp .env.example .env.local
-```
-
-See [EMAIL_SETUP.md](./EMAIL_SETUP.md) for detailed instructions on configuring the email functionality.
-
-### Run the development server
-
-```bash
-npm run dev
-```
-
-### Setup pnpm (optional)
-
-If you are using `pnpm`, you need to add the following code to your `.npmrc` file:
-
-```bash
-public-hoist-pattern[]=*@heroui/*
-```
-
-After modifying the `.npmrc` file, you need to run `pnpm install` again to ensure that the dependencies are installed correctly.
-
-## Email Functionality
-
-The portfolio includes a working contact form that sends emails via SMTP. To use this feature:
-
-1. Configure your email provider settings in `.env.local`
-2. Test your configuration using the test endpoint
-3. The contact form in the Contact section will now send emails
-
-For detailed setup instructions, see [EMAIL_SETUP.md](./EMAIL_SETUP.md).
 
 ## License
 
-Licensed under the [MIT license](https://github.com/heroui-inc/next-app-template/blob/main/LICENSE).
+This project is licensed under the MIT License - see the LICENSE file for details.
