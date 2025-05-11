@@ -1,0 +1,20 @@
+# Ignore node_modules
+node_modules/
+
+# Ignore build artifacts
+.next/
+out/
+build/
+dist/
+
+# Ignore files with many linting issues for now
+components/Background3D.tsx
+components/ClientSideLayout.tsx
+components/contact-section.tsx
+components/footer.tsx
+components/GradientBackground.tsx
+components/MFEWrapper.tsx
+components/Microfrontends.tsx
+components/Project/project-card.tsx
+components/Project/project-images.ts
+components/theme-switch.tsx

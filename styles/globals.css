@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* --- Button Theme (Ejemplo Naranja) --- */
+    --mfe-button-bg-color: theme('colors.orange.500', orange); /* Usa theme() si tienes Tailwind */
+    --mfe-button-text-color: white;
+    --mfe-button-border-radius: theme('borderRadius.md', '6px');
+    --mfe-button-hover-bg-color: theme('colors.orange.600', darkorange);
+    --mfe-button-padding: theme('spacing.2') theme('spacing.4'); /* py-2 px-4 */
+    --mfe-button-focus-outline: 2px solid theme('colors.orange.700');
+
+    /* --- Dropdown Theme (Ejemplo Verde) --- */
+    --mfe-dropdown-select-border: 1px solid theme('colors.green.400', lightgreen);
+    --mfe-dropdown-select-bg-color: theme('colors.green.50', #f0fff0); /* Honeydew */
+    --mfe-dropdown-label-text-color: theme('colors.green.800', darkgreen);
+    --mfe-dropdown-select-focus-border-color: theme('colors.green.600');
+    --mfe-dropdown-select-focus-shadow: 0 0 0 0.2rem rgba(34, 139, 34, .25); /* ForestGreen con alpha */
+
+    /* --- Navbar Theme (Ejemplo Indigo) --- */
+    --mfe-navbar-bg: theme('colors.indigo.900', #1a202c);
+    --mfe-navbar-link-color: theme('colors.indigo.100', #ebf4ff);
+    --mfe-navbar-link-hover-color: white;
+    --mfe-navbar-link-hover-bg-color: theme('colors.indigo.700', #4c51bf);
+    --mfe-navbar-border-radius: theme('borderRadius.lg', '8px');
+  }
+
+  * {
+    @apply border-[hsl(var(--border))];
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+}

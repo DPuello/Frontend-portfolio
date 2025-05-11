@@ -1,0 +1,59 @@
+<svg width="100%" height="100%" viewBox="0 0 595 842" xmlns="http://www.w3.org/2000/svg">
+  <!-- Corner decorations -->
+  <path d="M0,0 L150,0 L0,150 Z" fill="#FFC000" fillOpacity="0.07" />
+  <path d="M595,0 L595,150 L445,0 Z" fill="#0087FF" fillOpacity="0.07" />
+  <path d="M0,842 L0,692 L150,842 Z" fill="#0087FF" fillOpacity="0.07" />
+  <path d="M595,842 L445,842 L595,692 Z" fill="#FFC000" fillOpacity="0.07" />
+  
+  <!-- Curved lines on sides -->
+  <path d="M-20,300 Q100,400 -20,500" stroke="#FFC000" strokeWidth="0.5" fill="none" strokeOpacity="0.2" />
+  <path d="M-15,280 Q120,400 -15,520" stroke="#FFC000" strokeWidth="0.5" fill="none" strokeOpacity="0.15" />
+  <path d="M-10,260 Q140,400 -10,540" stroke="#FFC000" strokeWidth="0.5" fill="none" strokeOpacity="0.1" />
+  
+  <path d="M615,300 Q495,400 615,500" stroke="#0087FF" strokeWidth="0.5" fill="none" strokeOpacity="0.2" />
+  <path d="M610,280 Q475,400 610,520" stroke="#0087FF" strokeWidth="0.5" fill="none" strokeOpacity="0.15" />
+  <path d="M605,260 Q455,400 605,540" stroke="#0087FF" strokeWidth="0.5" fill="none" strokeOpacity="0.1" />
+  
+  <!-- Circle decorations -->
+  <circle cx="50" cy="250" r="70" fill="#FFC000" fillOpacity="0.03" />
+  <circle cx="545" cy="650" r="80" fill="#0087FF" fillOpacity="0.03" />
+  
+  <!-- Dotted grid pattern in center areas -->
+  <g opacity="0.05">
+    <circle cx="150" cy="400" r="1" fill="#333333" />
+    <circle cx="170" cy="400" r="1" fill="#333333" />
+    <circle cx="190" cy="400" r="1" fill="#333333" />
+    <circle cx="210" cy="400" r="1" fill="#333333" />
+    <circle cx="230" cy="400" r="1" fill="#333333" />
+    
+    <circle cx="150" cy="420" r="1" fill="#333333" />
+    <circle cx="170" cy="420" r="1" fill="#333333" />
+    <circle cx="190" cy="420" r="1" fill="#333333" />
+    <circle cx="210" cy="420" r="1" fill="#333333" />
+    <circle cx="230" cy="420" r="1" fill="#333333" />
+    
+    <circle cx="150" cy="440" r="1" fill="#333333" />
+    <circle cx="170" cy="440" r="1" fill="#333333" />
+    <circle cx="190" cy="440" r="1" fill="#333333" />
+    <circle cx="210" cy="440" r="1" fill="#333333" />
+    <circle cx="230" cy="440" r="1" fill="#333333" />
+    
+    <circle cx="380" cy="600" r="1" fill="#333333" />
+    <circle cx="400" cy="600" r="1" fill="#333333" />
+    <circle cx="420" cy="600" r="1" fill="#333333" />
+    <circle cx="440" cy="600" r="1" fill="#333333" />
+    <circle cx="460" cy="600" r="1" fill="#333333" />
+    
+    <circle cx="380" cy="620" r="1" fill="#333333" />
+    <circle cx="400" cy="620" r="1" fill="#333333" />
+    <circle cx="420" cy="620" r="1" fill="#333333" />
+    <circle cx="440" cy="620" r="1" fill="#333333" />
+    <circle cx="460" cy="620" r="1" fill="#333333" />
+    
+    <circle cx="380" cy="640" r="1" fill="#333333" />
+    <circle cx="400" cy="640" r="1" fill="#333333" />
+    <circle cx="420" cy="640" r="1" fill="#333333" />
+    <circle cx="440" cy="640" r="1" fill="#333333" />
+    <circle cx="460" cy="640" r="1" fill="#333333" />
+  </g>
+</svg> 

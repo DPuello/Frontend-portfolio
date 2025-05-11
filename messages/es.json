@@ -1,0 +1,315 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "about": "Sobre Mí",
+    "projects": "Proyectos",
+    "hobbies": "Pasatiempos",
+    "contact": "Contacto",
+    "language": "Idioma"
+  },
+  "home": {
+    "title": "Hola, soy Juan Daniel",
+    "subtitle": "Desarrollador Frontend",
+    "description": "Creo aplicaciones web modernas y responsivas con React, Next.js y TypeScript",
+    "cta": "Ver Proyectos"
+  },
+  "about": {
+    "title": "Sobre Mí",
+    "subtitle": "Conóceme mejor",
+    "description": "Soy un desarrollador frontend apasionado con experiencia en la construcción de aplicaciones web dinámicas. Me encanta crear interfaces de usuario intuitivas y resolver problemas complejos con código limpio y eficiente.",
+    "resume": "Descargar Currículum",
+    "greeting": "Hola, soy Juan Daniel Castañeda",
+    "skills": "Mis Habilidades",
+    "seeHobbies": "Ver Mis Pasatiempos",
+    "experienceReactNative": "Conocido por mejorar la experiencia del usuario en plataformas digitales, incluyendo soluciones móviles con React Native.",
+    "experienceAgile": "Familiarizado con metodologías ágiles como SCRUM, herramientas de diseño como Figma y principios de accesibilidad web.",
+    "experienceLearning": "Comprometido con el aprendizaje continuo y la mejora constante de la experiencia del usuario.",
+    "resumeContent": {
+      "aboutTitle": "Sobre Mí",
+      "about": "Desarrollador Front-End con experiencia en la creación de interfaces responsivas y escalables utilizando tecnologías como React, Next.js, HTML, CSS y JavaScript. Destacado por su capacidad para mejorar la experiencia de usuario en plataformas digitales, incluyendo soluciones móviles con React Native. Familiarizado con metodologías ágiles como SCRUM, herramientas de diseño como Figma y principios de accesibilidad web. Comprometido con el aprendizaje continuo y la mejora constante de la experiencia del usuario.",
+      "skills": {
+        "title": "Mis Habilidades",
+        "frontend": "Frontend",
+        "items": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "JavaScript",
+          "HTML",
+          "CSS",
+          "Tailwind CSS",
+          "React Native",
+          "Git",
+          "Figma",
+          "Scrum"
+        ]
+      },
+      "experience": {
+        "title": "Mis Experiencias",
+        "items": [
+          {
+            "position": "Desarrollador Front-End",
+            "company": "egroup Colombia",
+            "location": "Bogotá, Colombia",
+            "period": "Septiembre 2023 - Presente",
+            "highlights": [
+              "Desarrollo de interfaces escalables y optimizadas con Next.js para plataformas de e-learning.",
+              "Integración de componentes y funcionalidades en colaboración con equipos externos, garantizando coherencia visual y técnica.",
+              "Optimización continua de la seguridad, el diseño y la experiencia del usuario.",
+              "Desarrollo de aplicaciones móviles mediante React Native para mejorar la accesibilidad multiplataforma.",
+              "Conexión e integración eficiente de APIs y middlewares.",
+              "Automatización de procesos mediante scripts para mejorar la interacción con cursos digitales."
+            ]
+          },
+          {
+            "position": "Diseñador instruccional Junior",
+            "company": "egroup Colombia",
+            "location": "Bogotá, Colombia",
+            "period": "2021 - Septiembre 2023",
+            "highlights": [
+              "Creación de cursos interactivos en Storyline para mejorar la efectividad del aprendizaje.",
+              "Implementación de funciones avanzadas en JavaScript para personalizar experiencias de usuario.",
+              "Desarrollo de aplicaciones de realidad aumentada con Unity enfocadas en dispositivos móviles.",
+              "Diseño y programación de experiencias de realidad virtual para Oculus Quest 2.",
+              "Producción de videojuegos educativos utilizando GDevelop e integración con plataformas de e-learning."
+            ]
+          }
+        ]},
+        "education": {
+          "title": "Mis Estudios",
+          "items": [
+            {
+              "degree": "Ingeniería en Multimedia",
+              "institution": "Universidad Militar Nueva Granada",
+              "location": "Bogotá, Colombia",
+              "period": "2016 - 2021",
+              "highlights": [
+                "Diseño y desarrollo de contenido multimedia",
+                "Integración de tecnologías multimedia"
+              ]
+            },
+            {
+              "degree": "Curso Back-End con Python",
+              "institution": "Colsubsidio + Universidad de los Andes",
+              "location": "Online",
+              "period": "2024",
+              "highlights": [
+                "Creación de APIs y servicios RESTful",
+                "CRUD de datos con FastAPI y SQLAlchemy"
+              ]
+            }
+          ],
+          "projects": {
+            "title": "Mis Proyectos",
+            "items": [
+              {
+                "title": "Desarrollo de SCORM para Adalid",
+                "description": "Freelance para Adalid donde se programaron múltiples módulos SCORM con Articulate Storyline siguiendo una línea gráfica definida.",
+                "technologies": ["Articulate Storyline", "JavaScript"],
+                "highlights": [
+                  "Creación de actividades interactivas y evaluaciones",
+                  "Implementación de contenido educativo personalizado"
+                ]
+              }
+            ]
+          }
+        
+      }
+    }
+  },
+  "projects": {
+    "title": "Mis Proyectos",
+    "subtitle": "Echa un vistazo a algunos de mis trabajos recientes",
+    "viewMore": "Ver Más en GitLab",
+    "viewThisProject": "Ver este proyecto en Github",
+    "viewProject": "Ver Proyecto",
+    "viewGallery": "Ver Galería",
+    "close": "Cerrar",
+    "evoluxion": {
+      "title": "Evoluxión",
+      "description": "Una plataforma integral de e-learning para cursos de desarrollo profesional.",
+      "images": {
+        "home": {
+          "description": "Página de inicio responsiva con un banner adaptable a dispositivos y una lista personalizada de cursos en progreso. Una lista de cursos inscritos y contenido recomendado basado en el rol del usuario.",
+          "alt": "Página de inicio de Evoluxión con panel de cursos"
+        },
+        "login": {
+          "description": "Página de inicio de sesión interactiva con carrusel de imágenes e integración de NextAuth que ofrece múltiples métodos de autenticación, incluyendo credenciales tradicionales e inicio de sesión con Google.",
+          "alt": "Página de inicio de sesión de Evoluxión con NextAuth"
+        },
+        "course": {
+          "description": "Página de detalles del curso que muestra información completa, tráiler/banner, botón de inscripción, reseñas de usuarios y calificaciones. La visibilidad del contenido se ajusta dinámicamente según los roles del usuario.",
+          "alt": "Página de detalles del curso con información y reseñas"
+        },
+        "lesson": {
+          "description": "Vista interactiva de lección con navegación lateral que muestra la estructura del curso, recursos de la lección y área de contenido principal. Soporta múltiples formatos de contenido incluyendo módulos SCORM, videos, PDFs e infografías interactivas.",
+          "alt": "Página de lección con navegación lateral y contenido"
+        }
+      }
+    },
+    "superChachos": {
+      "title": "Super Chachos del Motor",
+      "description": "Una plataforma de capacitación automotriz para mecánicos y entusiastas de los autos.",
+      "images": {
+        "login": {
+          "description": "Página de inicio de sesión completa con formulario de autenticación de usuario, registro de nuevos usuarios, recuperación de contraseña y aceptación de términos y condiciones.",
+          "alt": "Página de inicio de sesión de Super Chachos del Motor"
+        },
+        "home": {
+          "description": "Página de inicio responsiva con banner adaptable y tarjetas de cursos organizadas por progreso del usuario, proporcionando fácil acceso a las rutas de aprendizaje en curso.",
+          "alt": "Panel de control de Super Chachos con cursos basados en progreso"
+        },
+        "catalog": {
+          "description": "Catálogo de cursos con navegación por pestañas organizada por estado de progreso, presentando tarjetas de cursos y un contador dinámico para rastrear las opciones de aprendizaje disponibles.",
+          "alt": "Catálogo de cursos organizado con pestañas de progreso"
+        },
+        "progress": {
+          "description": "Vista interactiva del curso que muestra la lección SCORM actual con navegación para acceder a otras lecciones del curso, apoyando una experiencia de aprendizaje fluida.",
+          "alt": "Vista de lección SCORM con navegación del curso"
+        }
+      }
+    },
+    "cintia": {
+      "title": "CintIA",
+      "description": "Una plataforma de chatbot impulsada por IA para la automatización del servicio al cliente.",
+      "images": {
+        "access": {
+          "description": "Página de restricción de acceso que evita la entrada no autorizada, mostrando la marca de CintIA e informando a los usuarios sobre qué plataformas pueden usar para acceder a los servicios del chatbot.",
+          "alt": "Página de restricción de acceso del chatbot CintIA"
+        },
+        "chat": {
+          "description": "Interfaz de conversación inicial con botones de selección de temas que permiten a los usuarios elegir temas específicos de conversación o consultas para una asistencia más enfocada.",
+          "alt": "Pantalla de selección de temas del chatbot CintIA"
+        },
+        "active": {
+          "description": "Vista de conversación activa que muestra burbujas de mensajes tanto del chatbot como del usuario con marcas de tiempo, indicadores de estado de lectura y botones de calificación de utilidad para evaluar la utilidad de las respuestas.",
+          "alt": "Interfaz de conversación activa del chatbot CintIA"
+        },
+        "search": {
+          "description": "Funcionalidad de búsqueda que resalta términos coincidentes dentro de conversaciones anteriores con un indicador de conteo, permitiendo a los usuarios localizar rápidamente información relevante de interacciones pasadas.",
+          "alt": "Búsqueda de mensajes del chatbot CintIA con resultados resaltados"
+        }
+      }
+    },
+    "emprendedores": {
+      "title": "Emprendedores Bavaria",
+      "description": "Una plataforma de desarrollo empresarial para emprendedores.",
+      "images": {
+        "login": {
+          "description": "Interfaz de autenticación segura con acceso por nombre de usuario y contraseña, presentando la marca de Bavaria y un diseño optimizado para dispositivos móviles.",
+          "alt": "Pantalla de inicio de sesión de la app Bavaria"
+        },
+        "home": {
+          "description": "Pantalla de inicio dinámica con contenido de banner impulsado por API y tarjetas de cursos categorizadas por progreso. Implementa un sistema de prerrequisitos que proporciona retroalimentación cuando no se cumplen las condiciones de acceso al curso.",
+          "alt": "Pantalla de inicio dinámica con progreso de cursos"
+        },
+        "catalog": {
+          "description": "Catálogo de cursos que muestra los cursos disponibles con indicadores visuales de progreso y estado de prerrequisitos, ayudando a los usuarios a entender los requisitos de su ruta de aprendizaje.",
+          "alt": "Catálogo de cursos con prerrequisitos"
+        },
+        "profile": {
+          "description": "Interfaz de perfil de usuario que muestra información personal, foto de perfil y insignias de logros obtenidas basadas en hitos de aprendizaje completados y finalización de cursos.",
+          "alt": "Perfil de usuario con insignias de logros"
+        },
+        "analysis": {
+          "description": "Panel de análisis con gráficos de dona que visualizan el tiempo invertido por curso y métricas de porcentaje de finalización, dando a los usuarios información sobre su progreso de aprendizaje.",
+          "alt": "Panel de análisis con métricas de progreso"
+        }
+      }
+    },
+    "uxplora": {
+      "title": "Uxplora",
+      "description": "Una plataforma de aprendizaje de diseño UX con cursos interactivos.",
+      "images": {
+        "home": {
+          "description": "Página de inicio interactiva con un carrusel de noticias dinámico con funciones de usabilidad personalizadas y elementos de diseño implementados según prototipos aprobados en Figma.",
+          "alt": "Página de inicio de Uxplora con carrusel de noticias"
+        },
+        "study": {
+          "description": "Vista detallada del plan de estudio con sistema de desbloqueo progresivo que permite el acceso a cursos, recursos y evaluaciones a medida que los usuarios avanzan en cada paso de su viaje de aprendizaje.",
+          "alt": "Interfaz de plan de aprendizaje progresivo"
+        },
+        "marketplace": {
+          "description": "Mercado de cursos con sistema de filtrado integral que permite a los usuarios descubrir fácilmente cursos disponibles basados en múltiples criterios y preferencias.",
+          "alt": "Tienda de cursos con filtros avanzados"
+        }
+      }
+    }
+  },
+  "hobbies": {
+    "title": "Mis Pasatiempos",
+    "subtitle": "Lo que disfruto en mi tiempo libre",
+    "viewPortfolio": "Ver Mi Portafolio Creativo",
+    "description": "Estas actividades creativas me han ayudado a desarrollar un buen ojo para el diseño, atención al detalle y la capacidad de pensar en múltiples dimensiones - habilidades que benefician directamente mi trabajo como desarrollador frontend.",
+    "items": {
+      "illustrations": {
+        "title": "Ilustraciones",
+        "description": "Ilustraciones digitales creadas con Photoshop e Illustrator"
+      },
+      "3dmodeling": {
+        "title": "Modelado y Animación 3D",
+        "description": "Modelos 3D, texturizado, rigging y animaciones creadas con Maya, Blender y Mudbox"
+      },
+      "2danimation": {
+        "title": "Animación 2D",
+        "description": "Animaciones cuadro por cuadro creadas con Toon Boom, Krita y dibujo tradicional"
+      },
+      "motiongraphics": {
+        "title": "Motion Graphics",
+        "description": "Gráficos en movimiento y efectos visuales creados con After Effects"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contáctame",
+    "subtitle": "Trabajemos juntos",
+    "name": "Nombre",
+    "email": "Correo Electrónico",
+    "message": "Mensaje",
+    "send": "Enviar Mensaje",
+    "success": "¡Mensaje enviado con éxito!",
+    "error": "Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo.",
+    "required": "Este campo es obligatorio",
+    "contactInfo": "Información de Contacto",
+    "reachOut": "No dudes en contactarme a través de cualquiera de estos canales:",
+    "follow": "Sígueme",
+    "sendMessage": "Envíame un Mensaje",
+    "validation": {
+      "nameLength": "El nombre debe tener al menos 2 caracteres",
+      "emailValid": "Por favor, introduce un correo electrónico válido",
+      "messageLength": "El mensaje debe tener al menos 10 caracteres",
+      "fixErrors": "Por favor, corrige los errores en el formulario.",
+      "networkError": "Error de red. Por favor, verifica tu conexión e inténtalo de nuevo."
+    },
+    "modal": {
+      "title": "Formulario de Contacto",
+      "close": "Cerrar"
+    }
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados",
+    "madeWith": "Hecho con",
+    "about": {
+      "title": "Sobre Mí",
+      "description": "Desarrollador front-end especializado en crear experiencias web hermosas y responsivas con pasión por el diseño intuitivo de UI/UX."
+    },
+    "quickLinks": {
+      "title": "Enlaces Rápidos"
+    },
+    "contact": {
+      "title": "Contacto",
+      "email": "Correo Electrónico",
+      "phone": "Teléfono",
+      "location": "Ubicación"
+    },
+    "builtWith": {
+      "text": "Construido con",
+      "and": "y"
+    }
+  },
+  "notFound": {
+    "title": "Página No Encontrada",
+    "description": "La página que estás buscando puede haber sido eliminada, ha cambiado de nombre o no está disponible temporalmente.",
+    "backHome": "Volver al Inicio"
+  }
+}

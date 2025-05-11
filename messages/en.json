@@ -1,0 +1,316 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "hobbies": "Hobbies",
+    "contact": "Contact",
+    "language": "Language"
+  },
+  "home": {
+    "title": "Hi, I'm Juan Daniel",
+    "subtitle": "Frontend Developer",
+    "description": "I create modern and responsive web applications with React, Next.js, and TypeScript",
+    "cta": "View Projects"
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Get to know me better",
+    "description": "I'm a passionate frontend developer with experience in building dynamic web applications. I love creating intuitive user interfaces and solving complex problems with clean, efficient code.",
+    "resume": "Download Resume",
+    "greeting": "Hi, I'm Juan Daniel Castañeda",
+    "skills": "My Skills",
+    "seeHobbies": "See My Hobbies",
+    "experienceReactNative": "Known for enhancing user experience on digital platforms, including mobile solutions with React Native.",
+    "experienceAgile": "Familiar with agile methodologies like SCRUM, design tools like Figma, and web accessibility principles.",
+    "experienceLearning": "Committed to continuous learning and constantly improving the user experience.",
+    "resumeContent": {
+      "aboutTitle": "About Me",
+      "about": "Front-End Developer with experience in creating responsive and scalable interfaces using technologies like React, Next.js, HTML, CSS, and JavaScript. Known for enhancing user experience on digital platforms, including mobile solutions with React Native. Familiar with agile methodologies like SCRUM, design tools like Figma, and web accessibility principles. Committed to continuous learning and constantly improving the user experience.",
+      "skills": {
+        "title": "My Skills",
+        "frontend": "Frontend",
+        "items": [
+          "React",
+          "Next.js",
+          "TypeScript",
+          "JavaScript",
+          "HTML",
+          "CSS",
+          "Tailwind CSS",
+          "React Native",
+          "Git",
+          "Figma",
+          "Scrum"
+        ]
+      },
+      "experience": {
+        "title": "My Experiences",
+        "items": [
+          {
+            "position": "Front-End Developer",
+            "company": "egroup Colombia",
+            "location": "Bogotá, Colombia",
+            "period": "September 2023 - Present",
+            "highlights": [
+              "Development of scalable and optimized interfaces with Next.js for e-learning platforms.",
+              "Integration of components and functionalities in collaboration with external teams, ensuring visual and technical coherence.",
+              "Continuous optimization of security, design, and user experience.",
+              "Development of mobile applications using React Native to improve cross-platform accessibility.",
+              "Efficient connection and integration of APIs and middlewares.",
+              "Process automation through scripts to improve interaction with digital courses."
+            ]
+          },
+          {
+            "position": "Junior Instructional Designer",
+            "company": "egroup Colombia",
+            "location": "Bogotá, Colombia",
+            "period": "2021 - September 2023",
+            "highlights": [
+              "Creation of interactive courses in Storyline to improve learning effectiveness.",
+              "Implementation of advanced JavaScript functions to customize user experiences.",
+              "Development of augmented reality applications with Unity focused on mobile devices.",
+              "Design and programming of virtual reality experiences for Oculus Quest 2.",
+              "Production of educational video games using GDevelop and integration with e-learning platforms."
+            ]
+          }
+        ]
+      },
+        "education": {
+          "title": "My Education",
+          "items": [
+            {
+              "degree": "Multimedia Engineering",
+              "institution": "Nueva Granada Military University",
+              "location": "Bogotá, Colombia",
+              "period": "2016 - 2021",
+              "highlights": [
+                "Design and development of multimedia content",
+                "Integration of multimedia technologies"
+              ]
+            },
+            {
+              "degree": "Back-End with Python Course",
+              "institution": "Colsubsidio + University of the Andes",
+              "location": "Online",
+              "period": "2024",
+              "highlights": [
+                "Creation of APIs and RESTful services",
+                "Data CRUD with FastAPI and SQLAlchemy"
+              ]
+            }
+          ],
+          "projects": {
+            "title": "My Projects",
+            "items": [
+              {
+                "title": "SCORM Development for Adalid",
+                "description": "Freelance work for Adalid where multiple SCORM modules were programmed with Articulate Storyline following a defined graphic line.",
+                "technologies": ["Articulate Storyline", "JavaScript"],
+                "highlights": [
+                  "Creation of interactive activities and assessments",
+                  "Implementation of personalized educational content"
+                ]
+              }
+            ]
+          }
+        
+      }
+    }
+  },
+  "projects": {
+    "title": "My Projects",
+    "subtitle": "Check out some of my recent work",
+    "viewMore": "View More on GitLab",
+    "viewThisProject": "View this project on Github",
+    "viewProject": "View Project",
+    "viewGallery": "View Gallery",
+    "close": "Close",
+    "evoluxion": {
+      "title": "Evoluxión",
+      "description": "A comprehensive e-learning platform for professional development courses.",
+      "images": {
+        "home": {
+          "description": "Responsive home page featuring a device-adaptive banner and a personalized list of in-progress courses. A course list to enrolled courses and recommended content based on the user's role.",
+          "alt": "Evoluxión home page with course dashboard"
+        },
+        "login": {
+          "description": "Interactive login page with image carousel and NextAuth integration offering multiple authentication methods including traditional credentials and Google sign-in.",
+          "alt": "Evoluxión login page with NextAuth"
+        },
+        "course": {
+          "description": "Course detail page displaying comprehensive information, trailer/banner, enrollment button, user reviews, and ratings. Content visibility is dynamically adjusted based on user roles.",
+          "alt": "Course detail page with information and reviews"
+        },
+        "lesson": {
+          "description": "Interactive lesson view with sidebar navigation showing course structure, lesson resources, and main content area. Supports multiple content formats including SCORM modules, videos, PDFs, and interactive infographics.",
+          "alt": "Lesson page with sidebar navigation and content"
+        }
+      }
+    },
+    "superChachos": {
+      "title": "Super Chachos del Motor",
+      "description": "An automotive training platform for mechanics and car enthusiasts.",
+      "images": {
+        "login": {
+          "description": "Comprehensive login page with user authentication form, new user registration, password recovery, and terms and conditions acceptance features.",
+          "alt": "Super Chachos del Motor login page"
+        },
+        "home": {
+          "description": "Responsive home page with adaptive banner and course cards organized by user progress, providing easy access to ongoing learning pathways.",
+          "alt": "Super Chachos dashboard with progress-based courses"
+        },
+        "catalog": {
+          "description": "Course catalog with tabbed navigation organized by progress status, featuring course cards and a dynamic course counter to track available learning options.",
+          "alt": "Organized course catalog with progress tabs"
+        },
+        "progress": {
+          "description": "Interactive course view displaying the current SCORM lesson with navigation to access other course lessons, supporting a seamless learning experience.",
+          "alt": "SCORM lesson view with course navigation"
+        }
+      }
+    },
+    "cintia": {
+      "title": "CintIA",
+      "description": "An AI-powered chatbot platform for customer service automation.",
+      "images": {
+        "access": {
+          "description": "Access restriction page that prevents unauthorized entry, displaying CintIA's branding and informing users about which platforms they can use to access the chatbot's services.",
+          "alt": "CintIA chatbot access restriction page"
+        },
+        "chat": {
+          "description": "Initial conversation interface with topic selection buttons allowing users to choose specific conversation themes or inquiries for more focused assistance.",
+          "alt": "CintIA chatbot topic selection screen"
+        },
+        "active": {
+          "description": "Active conversation view showing message bubbles from both the chatbot and user with timestamps, read status indicators, and utility rating buttons to evaluate response helpfulness.",
+          "alt": "CintIA chatbot active conversation interface"
+        },
+        "search": {
+          "description": "Search functionality highlighting matched terms within previous conversations with a count indicator, enabling users to quickly locate relevant information from past interactions.",
+          "alt": "CintIA chatbot message search with highlighted results"
+        }
+      }
+    },
+    "emprendedores": {
+      "title": "Emprendedores Bavaria",
+      "description": "A business development platform for entrepreneurs.",
+      "images": {
+        "login": {
+          "description": "Secure authentication interface with username and password access, featuring Bavaria's branding and a streamlined design optimized for mobile devices.",
+          "alt": "Bavaria app login screen"
+        },
+        "home": {
+          "description": "Dynamic home screen with API-driven banner content and course cards categorized by progress. Implements a prerequisite system that provides feedback when course access conditions aren't met.",
+          "alt": "Dynamic home screen with course progress"
+        },
+        "catalog": {
+          "description": "Course catalog displaying available courses with visual progress indicators and prerequisite status, helping users understand their learning path requirements.",
+          "alt": "Course catalog with prerequisites"
+        },
+        "profile": {
+          "description": "User profile interface displaying personal information, profile picture, and earned achievement badges based on completed learning milestones and course completions.",
+          "alt": "User profile with achievement badges"
+        },
+        "analysis": {
+          "description": "Analytics dashboard featuring donut charts visualizing time spent per course and percentage completion metrics, giving users insights into their learning progress.",
+          "alt": "Analytics dashboard with progress metrics"
+        }
+      }
+    },
+    "uxplora": {
+      "title": "Uxplora",
+      "description": "A UX design learning platform with interactive courses.",
+      "images": {
+        "home": {
+          "description": "Interactive home page featuring a dynamic news carousel with custom usability functions and design elements implemented according to approved Figma prototypes.",
+          "alt": "Uxplora news carousel home page"
+        },
+        "study": {
+          "description": "Study plan detail view with progressive unlocking system that enables access to courses, resources, and assessments as users advance through each step of their learning journey.",
+          "alt": "Progressive learning plan interface"
+        },
+        "marketplace": {
+          "description": "Course marketplace with comprehensive filtering system allowing users to easily discover available courses based on multiple criteria and preferences.",
+          "alt": "Course store with advanced filters"
+        }
+      }
+    }
+  },
+  "hobbies": {
+    "title": "My Hobbies",
+    "subtitle": "What I enjoy in my free time",
+    "viewPortfolio": "View My Creative Portfolio",
+    "description": "These creative pursuits have helped me develop a strong eye for design, attention to detail, and the ability to think in multiple dimensions - skills that directly benefit my front-end development work.",
+    "items": {
+      "illustrations": {
+        "title": "Illustrations",
+        "description": "Digital illustrations created with Photoshop and Illustrator"
+      },
+      "3dmodeling": {
+        "title": "3D Modeling & Animation",
+        "description": "3D models, texturing, rigging and animations created with Maya, Blender, and Mudbox"
+      },
+      "2danimation": {
+        "title": "2D Animation",
+        "description": "Frame-by-frame animations created with Toon Boom, Krita and traditional drawing"
+      },
+      "motiongraphics": {
+        "title": "Motion Graphics",
+        "description": "Motion graphics and visual effects created with After Effects"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact Me",
+    "subtitle": "Let's work together",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message",
+    "success": "Message sent successfully!",
+    "error": "There was an error sending your message. Please try again.",
+    "required": "This field is required",
+    "contactInfo": "Contact Information",
+    "reachOut": "Feel free to reach out through any of these channels:",
+    "follow": "Follow Me",
+    "sendMessage": "Send Me a Message",
+    "validation": {
+      "nameLength": "Name must be at least 2 characters",
+      "emailValid": "Please enter a valid email address",
+      "messageLength": "Message must be at least 10 characters",
+      "fixErrors": "Please fix the errors in the form.",
+      "networkError": "Network error. Please check your connection and try again."
+    },
+    "modal": {
+      "title": "Contact Form",
+      "close": "Close"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "madeWith": "Made with",
+    "about": {
+      "title": "About Me",
+      "description": "Front-end developer specializing in creating beautiful and responsive web experiences with a passion for intuitive UI/UX design."
+    },
+    "quickLinks": {
+      "title": "Quick Links"
+    },
+    "contact": {
+      "title": "Contact",
+      "email": "Email",
+      "phone": "Phone",
+      "location": "Location"
+    },
+    "builtWith": {
+      "text": "Built with",
+      "and": "and"
+    }
+  },
+  "notFound": {
+    "title": "Page Not Found",
+    "description": "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.",
+    "backHome": "Return Home"
+  }
+}
