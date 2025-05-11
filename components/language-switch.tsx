@@ -1,15 +1,16 @@
 "use client";
 
 import React from "react";
-import { 
-  Dropdown, 
-  DropdownTrigger, 
-  DropdownMenu, 
-  DropdownItem
+import {
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownItem,
 } from "@heroui/dropdown";
 import { Button } from "@heroui/button";
 import { usePathname, useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
+
 import { locales } from "@/config/i18n";
 
 export const LanguageSwitch = () => {
@@ -21,43 +22,38 @@ export const LanguageSwitch = () => {
   // Handle language change
   const handleChange = (newLocale: string) => {
     // Get the path without the locale prefix
-    const pathWithoutLocale = pathname.replace(`/${locale}`, '');
-    
+    const pathWithoutLocale = pathname.replace(`/${locale}`, "");
+
     // If the new path starts with /, keep it, otherwise add /
-    const newPath = pathWithoutLocale.startsWith('/') 
-      ? `/${newLocale}${pathWithoutLocale}` 
+    const newPath = pathWithoutLocale.startsWith("/")
+      ? `/${newLocale}${pathWithoutLocale}`
       : `/${newLocale}/${pathWithoutLocale}`;
-    
+
     router.push(newPath);
   };
 
   // Language display names
   const languageNames: Record<string, string> = {
     en: "English",
-    es: "Español"
+    es: "Español",
   };
 
   return (
     <Dropdown>
       <DropdownTrigger>
-        <Button 
-          variant="light" 
-          className="text-sm min-w-0 px-1"
-        >
+        <Button className="text-sm min-w-0 px-1" variant="light">
           {languageNames[locale]}
         </Button>
       </DropdownTrigger>
-      <DropdownMenu 
+      <DropdownMenu
         aria-label={t("language")}
-        onAction={(key) => handleChange(key as string)}
         selectedKeys={[locale]}
+        onAction={(key) => handleChange(key as string)}
       >
         {locales.map((l) => (
-          <DropdownItem key={l}>
-            {languageNames[l]}
-          </DropdownItem>
+          <DropdownItem key={l}>{languageNames[l]}</DropdownItem>
         ))}
       </DropdownMenu>
     </Dropdown>
   );
-}; 
+};

@@ -1,7 +1,16 @@
 "use client";
 
-import { createContext, useContext, useState, useEffect, ReactNode } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  useEffect,
+  ReactNode,
+} from "react";
+import { AnimatePresence } from "framer-motion";
+
 import { locales, defaultLocale, Locale } from "@/config/i18n";
+import Loader from "@/components/loader";
 
 // Tipo para nuestros mensajes de traducción
 export type Messages = Record<string, any>;
@@ -38,6 +47,7 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
   // Cargar el idioma guardado en localStorage al iniciar
   useEffect(() => {
     const savedLocale = localStorage.getItem("language") || defaultLocale;
+
     if (locales.includes(savedLocale as any)) {
       loadMessages(savedLocale as Locale);
     } else {
@@ -49,7 +59,9 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
   const loadMessages = async (localeToLoad: Locale) => {
     setIsLoading(true);
     try {
-      const messages = (await import(`../messages/${localeToLoad}.json`)).default;
+      const messages = (await import(`../messages/${localeToLoad}.json`))
+        .default;
+
       setMessages(messages);
       setLocaleState(localeToLoad);
       localStorage.setItem("language", localeToLoad);
@@ -71,23 +83,28 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
     }
   };
 
-  // Mostrar un loading mientras se cargan los mensajes
-  if (isLoading) {
-    return <div className="w-full h-screen flex items-center justify-center">Cargando...</div>;
-  }
-
   return (
-    <LanguageContext.Provider value={{ locale, messages, setLocale }}>
-      {children}
-    </LanguageContext.Provider>
+    <AnimatePresence>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <LanguageContext.Provider value={{ locale, messages, setLocale }}>
+          {children}
+        </LanguageContext.Provider>
+      )}
+    </AnimatePresence>
   );
 }
 
 // Función de traducción sencilla
-export function t(messages: Messages, key: string, fallback: string = ""): string {
+export function t(
+  messages: Messages,
+  key: string,
+  fallback: string = "",
+): string {
   const keys = key.split(".");
   let result = messages;
-  
+
   for (const k of keys) {
     if (result && typeof result === "object" && k in result) {
       result = result[k];
@@ -95,6 +112,6 @@ export function t(messages: Messages, key: string, fallback: string = ""): strin
       return fallback || key;
     }
   }
-  
+
   return typeof result === "string" ? result : fallback || key;
-} 
+}

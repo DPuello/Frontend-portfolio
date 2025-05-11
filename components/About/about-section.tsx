@@ -4,14 +4,15 @@ import Image from "next/image";
 import { Button } from "@heroui/button";
 import { Link } from "@heroui/link";
 import { Tooltip } from "@heroui/tooltip";
-import { title, subtitle } from "@/components/primitives";
-import Juan from "@/public/images/juan.jpg";
 import dynamic from "next/dynamic";
-import { motion } from "framer-motion";
-import { lightColors, darkColors } from "@/config/theme";
 import { useTheme } from "next-themes";
 import { Chip } from "@heroui/react";
+
 import { CodeIcon, RocketIcon, ScrumIcon, UXDesignIcon } from "../icons";
+
+import { lightColors, darkColors } from "@/config/theme";
+import Juan from "@/public/images/juan.jpg";
+import { title, subtitle } from "@/components/primitives";
 import { useTranslation } from "@/hooks/useTranslation";
 // import Microfrontends from "../Microfrontends";
 
@@ -19,9 +20,9 @@ import { useTranslation } from "@/hooks/useTranslation";
 const ResumeDownloadButton = dynamic(
   () =>
     import("@/components/About/resume-download-button").then(
-      (mod) => mod.ResumeDownloadButton
+      (mod) => mod.ResumeDownloadButton,
     ),
-  { ssr: false, loading: () => <Button disabled>Loading...</Button> }
+  { ssr: false, loading: () => <Button disabled>Loading...</Button> },
 );
 
 // Define our skills data structure with descriptions
@@ -82,10 +83,10 @@ const SkillItem = ({
 
   return (
     <Tooltip
-      content={skill.description}
-      placement="top"
-      delay={200}
       closeDelay={100}
+      content={skill.description}
+      delay={200}
+      placement="top"
     >
       <Chip
         className="bg-transparent"
@@ -105,25 +106,23 @@ export function AboutSection() {
   const { t } = useTranslation("about");
   const { resolvedTheme } = useTheme();
   const isDark = resolvedTheme === "dark";
-  
+
   return (
-    <section id="about" className="py-16 w-full">
+    <section className="py-16 w-full" id="about">
       {/* <Microfrontends /> */}
       <div className="text-center mb-12">
         <h2 className={title({ size: "sm" })}>{t("title")}</h2>
-        <p className={subtitle({ class: "mt-4" })}>
-          {t("subtitle")}
-        </p>
+        <p className={subtitle({ class: "mt-4" })}>{t("subtitle")}</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-5xl mx-auto">
         <div className="relative aspect-square rounded-xl overflow-hidden">
           <Image
-            src={Juan}
-            alt="Juan Daniel Castañeda"
             fill
-            className="object-cover object-top"
             priority
+            alt="Juan Daniel Castañeda"
+            className="object-cover object-top"
+            src={Juan}
           />
         </div>
 
@@ -132,36 +131,38 @@ export function AboutSection() {
 
           <div className="space-y-4 text-default-600">
             <p className="leading-relaxed flex items-center gap-2">
-              <RocketIcon className={`w-5 h-5 flex-shrink-0 mr-2 ${isDark ? 'text-white' : 'text-primary'}`} />
-              <span>
-                {t("description")}
-              </span>
+              <RocketIcon
+                className={`w-5 h-5 flex-shrink-0 mr-2 ${isDark ? "text-white" : "text-primary"}`}
+              />
+              <span>{t("description")}</span>
             </p>
 
             <p className="leading-relaxed mt-3 flex items-center gap-2">
-              <CodeIcon className={`w-5 h-5 flex-shrink-0 mr-2 ${isDark ? 'text-white' : 'text-primary'}`} />
-              <span>
-                {t("experienceReactNative")}
-              </span>
+              <CodeIcon
+                className={`w-5 h-5 flex-shrink-0 mr-2 ${isDark ? "text-white" : "text-primary"}`}
+              />
+              <span>{t("experienceReactNative")}</span>
             </p>
 
             <p className="leading-relaxed mt-3 flex items-center gap-2">
-              <ScrumIcon className={`w-5 h-5 flex-shrink-0 mr-2 ${isDark ? 'text-white' : 'text-primary'}`} />
-              <span>
-                {t("experienceAgile")}
-              </span>
+              <ScrumIcon
+                className={`w-5 h-5 flex-shrink-0 mr-2 ${isDark ? "text-white" : "text-primary"}`}
+              />
+              <span>{t("experienceAgile")}</span>
             </p>
 
             <p className="leading-relaxed mt-3 flex items-center gap-2">
-              <UXDesignIcon className={`w-5 h-5 flex-shrink-0 mr-2 ${isDark ? 'text-white' : 'text-primary'}`} />
-              <span>
-                {t("experienceLearning")}
-              </span>
+              <UXDesignIcon
+                className={`w-5 h-5 flex-shrink-0 mr-2 ${isDark ? "text-white" : "text-primary"}`}
+              />
+              <span>{t("experienceLearning")}</span>
             </p>
           </div>
 
           <div className="space-y-3">
-            <h4 className="text-lg font-semibold">{t("skills", "My Skills")}</h4>
+            <h4 className="text-lg font-semibold">
+              {t("skills", "My Skills")}
+            </h4>
             <div className="flex flex-wrap gap-2">
               {skills.map((skill) => (
                 <SkillItem key={skill.name} skill={skill} />

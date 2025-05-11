@@ -6,10 +6,10 @@ import {
   useAnimation,
   useMotionValue,
   AnimatePresence,
-  Variant,
-  animate,
 } from "framer-motion";
+
 import { useThemeWithFallback } from "./theme-provider";
+
 import { lightColors, darkColors } from "@/config/theme";
 import { gradientBackgroundDots } from "@/config/shapes";
 
@@ -83,7 +83,6 @@ const AnimatedDot: React.FC<DotProps> = ({
           ease: "easeInOut",
           duration: 30,
 
-
           delay: 30 - index * 2,
         },
         scale: {
@@ -109,9 +108,10 @@ const AnimatedDot: React.FC<DotProps> = ({
       // Calculate shadow
       const shadowSize = 20 + (1 - distance) * 30;
       const shadowColor = `${hoverColor}${Math.round(mixFactor * 99).toString(16)}`;
+
       return `0 0 ${shadowSize}px ${shadowColor}`;
     },
-    [index, primaryColor, secondaryColor]
+    [index, primaryColor, secondaryColor],
   );
 
   // Calculate and update visual properties based on mouse distance
@@ -144,13 +144,14 @@ const AnimatedDot: React.FC<DotProps> = ({
       blurMotion,
       opacityMotion,
       boxShadowMotion,
-    ]
+    ],
   );
 
   // Throttled mouse move handler
   const handleMouseMove = useCallback((clientX: number, clientY: number) => {
     // Throttle updates
     const now = Date.now();
+
     if (now - lastUpdateTimeRef.current < throttleDelay) return;
     lastUpdateTimeRef.current = now;
 
@@ -217,10 +218,9 @@ const AnimatedDot: React.FC<DotProps> = ({
   return (
     <motion.div
       ref={dotRef}
-      className="absolute rounded-full"
-      variants={dotVariants}
-      initial="initial"
       animate="animate"
+      className="absolute rounded-full"
+      initial="initial"
       style={{
         left: `${position[0]}%`,
         top: `${position[1]}%`,
@@ -238,6 +238,7 @@ const AnimatedDot: React.FC<DotProps> = ({
         filter: { duration: 0.3 },
         boxShadow: { duration: 0.3 },
       }}
+      variants={dotVariants}
     />
   );
 };
@@ -259,8 +260,10 @@ const GradientBackground: React.FC<GradientBackgroundProps> = ({
 }) => {
   // Fall back to theme provider if theme not provided
   let theme: "dark" | "light";
+
   try {
     const { resolvedTheme } = useThemeWithFallback();
+
     theme = propTheme || (resolvedTheme as "dark" | "light") || "dark";
   } catch (e) {
     theme = propTheme || "dark";
@@ -268,7 +271,7 @@ const GradientBackground: React.FC<GradientBackgroundProps> = ({
 
   // State to track if animation should be fast (during loading) or slow (when visible)
   const [animationSpeed, setAnimationSpeed] = useState(
-    isLoading ? "fast" : "normal"
+    isLoading ? "fast" : "normal",
   );
   // State to track the entry animation
   const [entryStage, setEntryStage] = useState<
@@ -330,6 +333,7 @@ const GradientBackground: React.FC<GradientBackgroundProps> = ({
         setAnimationSpeed("normal");
         backgroundControls.start("normal");
       }, 1000);
+
       return () => clearTimeout(timer);
     } else {
       backgroundControls.start(animationSpeed);
@@ -415,33 +419,33 @@ const GradientBackground: React.FC<GradientBackgroundProps> = ({
   return (
     <motion.div
       className="fixed top-0 left-0 right-0 bottom-0 -z-10 w-full h-full"
-      variants={{
-        ...entryVariants,
-        ...backgroundAnimations,
-      }}
       style={{
         background: gradient,
         backgroundSize: "400% 400%",
+      }}
+      variants={{
+        ...entryVariants,
+        ...backgroundAnimations,
       }}
     >
       {/* Animated dots */}
       <AnimatePresence>
         {showDots && entryStage !== "initial" && (
           <motion.div
+            animate={{ opacity: 1 }}
             className="absolute inset-0 overflow-hidden"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
             transition={{ duration: 1 }}
           >
             {gradientBackgroundDots.map((dot, index) => (
               <AnimatedDot
                 key={dot.id}
+                index={index}
                 position={dot.position}
-                size={dot.size}
-                theme={theme}
                 primaryColor={primaryColors[2] + "90"}
                 secondaryColor={secondaryColors[2] + "90"}
-                index={index}
+                size={dot.size}
+                theme={theme}
               />
             ))}
           </motion.div>

@@ -16,9 +16,7 @@ export const personalData = {
     gitlab: "https://gitlab.com/_JuanDaniel",
     github: "https://github.com/DPuello",
   },
-  portfolio: "https://dpuello.github.io/Juan-Daniel-Castaneda/",
+  portfolio: "https://github.com/DPuello/Frontend-portfolio/",
   creative_portfolio: "https://dpuello.github.io/Juan-Daniel-Castaneda/",
   location: "Bogotá, Colombia",
 };
-
-

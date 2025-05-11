@@ -1,5 +1,3 @@
-import { heroui } from "@heroui/theme";
-
 // Define a shared color palette that can be used across the application
 export const colors = {
   light: {
@@ -71,9 +69,9 @@ export const colors = {
     shadow: "#000",
     glow: "#fff3",
     focus: "#0087FF",
-  }
+  },
 };
 
 // Export individual color values for easy access in components
 export const lightColors = colors.light;
-export const darkColors = colors.dark; 
+export const darkColors = colors.dark;

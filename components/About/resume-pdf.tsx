@@ -16,8 +16,9 @@ import {
   Circle,
   G,
 } from "@react-pdf/renderer";
-import { getResumeConfig } from "@/config/resume";
 import { Button } from "@heroui/button";
+
+import { getResumeConfig } from "@/config/resume";
 import { useTranslation } from "@/hooks/useTranslation";
 
 // Define types for resume data
@@ -112,7 +113,7 @@ const BackgroundSVG = ({
   secondaryColor: string;
   accentColor: string;
 }) => (
-  <Svg width="100%" height="100%" viewBox="0 0 595 842">
+  <Svg height="100%" viewBox="0 0 595 842" width="100%">
     {/* Corner decorations */}
     <Path d="M0,0 L150,0 L0,150 Z" fill={primaryColor} fillOpacity={0.07} />
     <Path
@@ -134,66 +135,66 @@ const BackgroundSVG = ({
     {/* Curved lines on sides */}
     <Path
       d="M-20,300 Q100,400 -20,500"
-      stroke={primaryColor}
-      strokeWidth={0.5}
       fill="none"
+      stroke={primaryColor}
       strokeOpacity={0.2}
+      strokeWidth={0.5}
     />
     <Path
       d="M-15,280 Q120,400 -15,520"
-      stroke={primaryColor}
-      strokeWidth={0.5}
       fill="none"
+      stroke={primaryColor}
       strokeOpacity={0.15}
+      strokeWidth={0.5}
     />
     <Path
       d="M-10,260 Q140,400 -10,540"
-      stroke={primaryColor}
-      strokeWidth={0.5}
       fill="none"
+      stroke={primaryColor}
       strokeOpacity={0.1}
+      strokeWidth={0.5}
     />
 
     <Path
       d="M615,300 Q495,400 615,500"
-      stroke={secondaryColor}
-      strokeWidth={0.5}
       fill="none"
+      stroke={secondaryColor}
       strokeOpacity={0.2}
+      strokeWidth={0.5}
     />
     <Path
       d="M610,280 Q475,400 610,520"
-      stroke={secondaryColor}
-      strokeWidth={0.5}
       fill="none"
+      stroke={secondaryColor}
       strokeOpacity={0.15}
+      strokeWidth={0.5}
     />
     <Path
       d="M605,260 Q455,400 605,540"
-      stroke={secondaryColor}
-      strokeWidth={0.5}
       fill="none"
+      stroke={secondaryColor}
       strokeOpacity={0.1}
+      strokeWidth={0.5}
     />
 
     {/* Circle decorations */}
-    <Circle cx={50} cy={250} r={70} fill={primaryColor} fillOpacity={0.03} />
-    <Circle cx={545} cy={650} r={80} fill={secondaryColor} fillOpacity={0.03} />
+    <Circle cx={50} cy={250} fill={primaryColor} fillOpacity={0.03} r={70} />
+    <Circle cx={545} cy={650} fill={secondaryColor} fillOpacity={0.03} r={80} />
 
     {/* Dotted grid pattern in center areas */}
     <G opacity={0.05}>
       {/* First dotted grid */}
       {[150, 170, 190, 210, 230].map((x) =>
         [400, 420, 440].map((y) => (
-          <Circle key={`${x}-${y}`} cx={x} cy={y} r={1} fill={accentColor} />
-        ))
+          <Circle key={`${x}-${y}`} cx={x} cy={y} fill={accentColor} r={1} />
+        )),
       )}
 
       {/* Second dotted grid */}
       {[380, 400, 420, 440, 460].map((x) =>
         [600, 620, 640].map((y) => (
-          <Circle key={`${x}-${y}`} cx={x} cy={y} r={1} fill={accentColor} />
-        ))
+          <Circle key={`${x}-${y}`} cx={x} cy={y} fill={accentColor} r={1} />
+        )),
       )}
     </G>
   </Svg>
@@ -383,9 +384,15 @@ const createStyles = (config: ResumeData) =>
   });
 
 // Create simpler, more compatible PDF Document
-const SimpleResumePDF = ({ config, locale }: { config: ResumeData, locale: string }) => {
+const SimpleResumePDF = ({
+  config,
+  locale,
+}: {
+  config: ResumeData;
+  locale: string;
+}) => {
   const styles = createStyles(config);
-  
+
   // Ensure all arrays are properly defined
   const safeSkills = Array.isArray(config.skills) ? config.skills : [];
   const safeExperience = Array.isArray(config.experience?.items)
@@ -400,33 +407,40 @@ const SimpleResumePDF = ({ config, locale }: { config: ResumeData, locale: strin
 
   // Section title translations
   const getSectionTitle = (section: string, defaultTitle: string) => {
-    if (section === 'about') {
+    if (section === "about") {
       return locale === "es" ? "Sobre Mí" : "About Me";
-    } else if (section === 'skills') {
+    } else if (section === "skills") {
       return config.skills?.length > 0 && safeSkills[0]?.title
         ? safeSkills[0].title
-        : locale === "es" ? "Mis Habilidades" : "Skills";
-    } else if (section === 'experience') {
-      return config.experience?.title || 
-        (locale === "es" ? "Experiencia" : "Experience");
-    } else if (section === 'education') {
-      return config.education?.title || 
-        (locale === "es" ? "Educación" : "Education");
-    } else if (section === 'projects') {
-      return config.projects?.title || 
-        (locale === "es" ? "Proyectos" : "Projects");
+        : locale === "es"
+          ? "Mis Habilidades"
+          : "Skills";
+    } else if (section === "experience") {
+      return (
+        config.experience?.title ||
+        (locale === "es" ? "Experiencia" : "Experience")
+      );
+    } else if (section === "education") {
+      return (
+        config.education?.title || (locale === "es" ? "Educación" : "Education")
+      );
+    } else if (section === "projects") {
+      return (
+        config.projects?.title || (locale === "es" ? "Proyectos" : "Projects")
+      );
     }
+
     return defaultTitle;
   };
 
   return (
     <Document>
       <Page size="A4" style={styles.page}>
-        <View style={styles.pageBackground} fixed>
-          <BackgroundSVG 
+        <View fixed style={styles.pageBackground}>
+          <BackgroundSVG
+            accentColor={config.pdfStyle.accentColor}
             primaryColor={config.pdfStyle.primaryColor}
             secondaryColor={config.pdfStyle.secondaryColor}
-            accentColor={config.pdfStyle.accentColor}
           />
         </View>
         {/* Header Section */}
@@ -467,7 +481,7 @@ const SimpleResumePDF = ({ config, locale }: { config: ResumeData, locale: strin
         {/* About Section */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>
-            {getSectionTitle('about', 'About Me')}
+            {getSectionTitle("about", "About Me")}
           </Text>
           <Text style={styles.aboutText}>{config.about}</Text>
         </View>
@@ -479,7 +493,7 @@ const SimpleResumePDF = ({ config, locale }: { config: ResumeData, locale: strin
             {/* Skills Section */}
             <View style={styles.section}>
               <Text style={styles.sectionTitle}>
-                {getSectionTitle('skills', 'Skills')}
+                {getSectionTitle("skills", "Skills")}
               </Text>
               {safeSkills.map((skillGroup, index) => {
                 // Ensure items is an array
@@ -511,12 +525,13 @@ const SimpleResumePDF = ({ config, locale }: { config: ResumeData, locale: strin
             {/* Education Section */}
             <View style={styles.section}>
               <Text style={styles.sectionTitle}>
-                {getSectionTitle('education', 'Education')}
+                {getSectionTitle("education", "Education")}
               </Text>
               {safeEducation.map((edu: EducationItem, index: number) => {
                 const highlights = Array.isArray(edu.highlights)
                   ? edu.highlights
                   : [];
+
                 return (
                   <View key={index} style={styles.experienceItem}>
                     <Text style={styles.positionTitle}>{edu.degree}</Text>
@@ -543,12 +558,13 @@ const SimpleResumePDF = ({ config, locale }: { config: ResumeData, locale: strin
             {/* Experience Section */}
             <View style={styles.section}>
               <Text style={styles.sectionTitle}>
-                {getSectionTitle('experience', 'Experience')}
+                {getSectionTitle("experience", "Experience")}
               </Text>
               {safeExperience.map((exp: ExperienceItem, index: number) => {
                 const highlights = Array.isArray(exp.highlights)
                   ? exp.highlights
                   : [];
+
                 return (
                   <View key={index} style={styles.experienceItem}>
                     <Text style={styles.positionTitle}>{exp.position}</Text>
@@ -577,7 +593,7 @@ const SimpleResumePDF = ({ config, locale }: { config: ResumeData, locale: strin
                 {/* Projects Section */}
                 <View style={styles.section}>
                   <Text style={styles.sectionTitle}>
-                    {getSectionTitle('projects', 'Projects')}
+                    {getSectionTitle("projects", "Projects")}
                   </Text>
                   {safeProjects.map((project: ProjectItem, index: number) => {
                     const technologies = Array.isArray(project.technologies)
@@ -586,6 +602,7 @@ const SimpleResumePDF = ({ config, locale }: { config: ResumeData, locale: strin
                     const highlights = Array.isArray(project.highlights)
                       ? project.highlights
                       : [];
+
                     return (
                       <View key={index} style={styles.experienceItem}>
                         <Text style={styles.projectTitle}>{project.title}</Text>
@@ -599,7 +616,7 @@ const SimpleResumePDF = ({ config, locale }: { config: ResumeData, locale: strin
                               <Text key={techIndex} style={styles.techItem}>
                                 {tech}
                               </Text>
-                            )
+                            ),
                           )}
                         </View>
 
@@ -609,7 +626,7 @@ const SimpleResumePDF = ({ config, locale }: { config: ResumeData, locale: strin
                               <Text key={hIndex} style={styles.highlightItem}>
                                 • {highlight}
                               </Text>
-                            )
+                            ),
                           )}
                         </View>
                       </View>
@@ -641,6 +658,7 @@ export const ResumeGenerator = ({
   // Get the filename with locale suffix
   const getLocalizedFilename = () => {
     const baseName = "Juan_Daniel_Castaneda_Resume";
+
     return locale === "es" ? `${baseName}_ES.pdf` : `${baseName}_EN.pdf`;
   };
 
@@ -680,10 +698,10 @@ export const ResumeGenerator = ({
 
         return (
           <Button
-            color="primary"
-            variant="shadow"
             className="font-bold"
+            color="primary"
             disabled={loading}
+            variant="shadow"
           >
             {loading ? "Generating Resume..." : downloadText}
           </Button>

@@ -2,7 +2,8 @@ export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
   name: "Juan Daniel Castañeda - Portfolio",
-  description: "Front-end developer specializing in creating beautiful and responsive web experiences.",
+  description:
+    "Front-end developer specializing in creating beautiful and responsive web experiences.",
   navItems: [
     {
       label: "Home",
@@ -42,5 +43,5 @@ export const siteConfig = {
       label: "Contact",
       href: "#contact",
     },
-  ]
+  ],
 };

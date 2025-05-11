@@ -1,13 +1,11 @@
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
-import { Link } from "@heroui/link";
 import clsx from "clsx";
-import { LanguageProvider } from "@/contexts/LanguageContext";
 
+import { LanguageProvider } from "@/contexts/LanguageContext";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Footer } from "@/components/footer";
 import ClientSideLayout from "@/components/ClientSideLayout";
-
 import { siteConfig } from "@/config/site";
 import { fontSans } from "@/config/fonts";
 import { Navbar } from "@/components/navbar";
@@ -36,7 +34,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html suppressHydrationWarning>
+    <html suppressHydrationWarning lang="en">
       <head />
       <body
         className={clsx(
@@ -45,7 +43,7 @@ export default function RootLayout({
         )}
       >
         <LanguageProvider>
-          <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ThemeProvider enableSystem attribute="class" defaultTheme="system">
             <ClientSideLayout>
               <div className="relative flex flex-col">
                 <Navbar />

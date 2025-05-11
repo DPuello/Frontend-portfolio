@@ -11,10 +11,8 @@ import {
   ModalFooter,
   Tooltip,
 } from "@heroui/react";
-import { title, subtitle } from "@/components/primitives";
 import { useState, FormEvent, ChangeEvent, useEffect } from "react";
-import { personalData } from "@/config/personal-data";
-import { useTranslation } from "@/hooks/useTranslation";
+
 import {
   GitlabIcon,
   LinkedinIcon,
@@ -22,6 +20,10 @@ import {
   MailIcon,
   PhoneIcon,
 } from "./icons";
+
+import { title, subtitle } from "@/components/primitives";
+import { personalData } from "@/config/personal-data";
+import { useTranslation } from "@/hooks/useTranslation";
 
 type FormState = {
   name: string;
@@ -96,13 +98,15 @@ export function ContactSection() {
     }
 
     setErrors(newErrors);
+
     return Object.keys(newErrors).length === 0;
   };
 
   const handleChange = (
-    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
+
     setFormState((prev) => ({
       ...prev,
       [name]: value,
@@ -158,8 +162,8 @@ export function ContactSection() {
             data.error ||
               t(
                 "error",
-                "There was an error sending your message. Please try again."
-              )
+                "There was an error sending your message. Please try again.",
+              ),
           );
         }
       }
@@ -185,14 +189,14 @@ export function ContactSection() {
   }, [submitStatus]);
 
   return (
-    <section id="contact" className="py-16 w-full">
+    <section className="py-16 w-full" id="contact">
       <div className="text-center mb-12">
         <h2 className={title({ size: "sm" })}>{t("title")}</h2>
         <p className={subtitle({ class: "mt-4" })}>{t("subtitle")}</p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-        <div className="space-y-6">
+        <div className="space-y-6 bg-primary-100/80 dark:bg-black/40 shadow-md rounded-xl p-6 backdrop-blur-sm">
           <div>
             <h3 className="text-xl font-bold mb-2">{t("contactInfo")}</h3>
             <p className="text-default-600">{t("reachOut")}</p>
@@ -203,9 +207,7 @@ export function ContactSection() {
               className="flex items-center gap-3"
               onClick={() => setEmailData(personalData.contact.email)}
               onFocus={() => setEmailData(personalData.contact.email)}
-              onMouseEnter={() =>
-                setEmailData(personalData.contact.email)
-              }
+              onMouseEnter={() => setEmailData(personalData.contact.email)}
             >
               <MailIcon />
               <span>{emailData}</span>
@@ -215,9 +217,7 @@ export function ContactSection() {
               className="flex items-center gap-3"
               onClick={() => setPhoneData(personalData.contact.phone)}
               onFocus={() => setPhoneData(personalData.contact.phone)}
-              onMouseEnter={() =>
-                setPhoneData(personalData.contact.phone)
-              }
+              onMouseEnter={() => setPhoneData(personalData.contact.phone)}
             >
               <PhoneIcon />
               <span>{phoneData}</span>
@@ -233,18 +233,18 @@ export function ContactSection() {
             <h3 className="text-xl font-bold mb-3">{t("follow")}</h3>
             <div className="flex gap-4">
               <a
-                href={personalData.contact.gitlab}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="text-default-600 hover:text-dark-primary transition-colors"
+                href={personalData.contact.gitlab}
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 <GitlabIcon />
               </a>
               <a
-                href={personalData.contact.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
                 className="text-default-600 hover:text-dark-primary transition-colors"
+                href={personalData.contact.linkedin}
+                rel="noopener noreferrer"
+                target="_blank"
               >
                 <LinkedinIcon />
               </a>
@@ -252,67 +252,67 @@ export function ContactSection() {
           </div>
         </div>
 
-        <div className="bg-default-50 dark:bg-dark-primary/5 p-6 rounded-xl">
+        <div className="bg-primary-100/80 dark:bg-black/40 shadow-md rounded-xl p-6 backdrop-blur-sm">
           <h3 className="text-xl font-bold mb-4">{t("sendMessage")}</h3>
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
               <Input
-                type="text"
-                name="name"
+                isRequired
+                errorMessage={errors.name}
+                isInvalid={!!errors.name}
                 label={t("name")}
+                name="name"
                 placeholder="John Doe"
+                type="text"
                 value={formState.name}
                 onChange={handleChange}
-                isInvalid={!!errors.name}
-                errorMessage={errors.name}
-                isRequired
               />
             </div>
             <div>
               <Input
-                type="email"
-                name="email"
+                isRequired
+                errorMessage={errors.email}
+                isInvalid={!!errors.email}
                 label={t("email")}
+                name="email"
                 placeholder="johndoe@example.com"
+                type="email"
                 value={formState.email}
                 onChange={handleChange}
-                isInvalid={!!errors.email}
-                errorMessage={errors.email}
-                isRequired
               />
             </div>
             <div>
               <Textarea
-                name="message"
+                isRequired
+                errorMessage={errors.message}
+                isInvalid={!!errors.message}
                 label={t("message")}
+                minRows={4}
+                name="message"
                 placeholder="Hello, I'd like to talk about..."
                 value={formState.message}
                 onChange={handleChange}
-                isInvalid={!!errors.message}
-                errorMessage={errors.message}
-                isRequired
-                minRows={4}
               />
             </div>
 
             <Tooltip
+              className="max-w-xs"
+              color={submitStatus === "success" ? "success" : "danger"}
               content={submitMessage}
               isOpen={
                 showTooltip &&
                 (submitStatus === "success" || submitStatus === "error")
               }
-              onOpenChange={(open) => setShowTooltip(open)}
-              color={submitStatus === "success" ? "success" : "danger"}
               placement="bottom"
               showArrow={true}
-              className="max-w-xs"
+              onOpenChange={(open) => setShowTooltip(open)}
             >
               <Button
-                type="submit"
-                color="primary"
                 className="w-full"
-                isLoading={isSubmitting}
+                color="primary"
                 isDisabled={isSubmitting}
+                isLoading={isSubmitting}
+                type="submit"
               >
                 {t("send")}
               </Button>
@@ -332,55 +332,55 @@ export function ContactSection() {
                 <form className="space-y-4">
                   <div>
                     <Input
-                      type="text"
-                      name="name"
+                      isRequired
+                      errorMessage={errors.name}
+                      isInvalid={!!errors.name}
                       label={t("name")}
+                      name="name"
                       placeholder="John Doe"
+                      type="text"
                       value={formState.name}
                       onChange={handleChange}
-                      isInvalid={!!errors.name}
-                      errorMessage={errors.name}
-                      isRequired
                     />
                   </div>
                   <div>
                     <Input
-                      type="email"
-                      name="email"
+                      isRequired
+                      errorMessage={errors.email}
+                      isInvalid={!!errors.email}
                       label={t("email")}
+                      name="email"
                       placeholder="johndoe@example.com"
+                      type="email"
                       value={formState.email}
                       onChange={handleChange}
-                      isInvalid={!!errors.email}
-                      errorMessage={errors.email}
-                      isRequired
                     />
                   </div>
                   <div>
                     <Textarea
-                      name="message"
+                      isRequired
+                      errorMessage={errors.message}
+                      isInvalid={!!errors.message}
                       label={t("message")}
+                      minRows={4}
+                      name="message"
                       placeholder="Hello, I'd like to talk about..."
                       value={formState.message}
                       onChange={handleChange}
-                      isInvalid={!!errors.message}
-                      errorMessage={errors.message}
-                      isRequired
-                      minRows={4}
                     />
                   </div>
 
                   <Tooltip
+                    className="max-w-xs"
+                    color={submitStatus === "success" ? "success" : "danger"}
                     content={submitMessage}
                     isOpen={
                       showTooltip &&
                       (submitStatus === "success" || submitStatus === "error")
                     }
-                    onOpenChange={(open) => setShowTooltip(open)}
-                    color={submitStatus === "success" ? "success" : "danger"}
                     placement="bottom"
                     showArrow={true}
-                    className="max-w-xs"
+                    onOpenChange={(open) => setShowTooltip(open)}
                   >
                     <div className="w-full text-center">
                       {submitStatus === "success" || submitStatus === "error"
@@ -395,22 +395,22 @@ export function ContactSection() {
                   {t("modal.close")}
                 </Button>
                 <Tooltip
+                  color={submitStatus === "success" ? "success" : "danger"}
                   content={submitMessage}
                   isOpen={
                     showTooltip &&
                     (submitStatus === "success" || submitStatus === "error")
                   }
-                  onOpenChange={(open) => setShowTooltip(open)}
-                  color={submitStatus === "success" ? "success" : "danger"}
                   placement="top"
+                  onOpenChange={(open) => setShowTooltip(open)}
                 >
                   <Button
                     color="primary"
+                    isDisabled={isSubmitting || submitStatus === "success"}
+                    isLoading={isSubmitting}
                     onPress={() => {
                       handleSubmit(new Event("submit") as unknown as FormEvent);
                     }}
-                    isLoading={isSubmitting}
-                    isDisabled={isSubmitting || submitStatus === "success"}
                   >
                     {t("send")}
                   </Button>

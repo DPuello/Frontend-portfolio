@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React from "react";
+
 import MFEWrapper from "./MFEWrapper";
 
 function Microfrontends() {
@@ -44,6 +45,7 @@ function Microfrontends() {
     onLinkClick: (href: any) =>
       console.log(`Navegación interceptada en Next hacia: ${href}`),
   };
+
   return (
     <div>
       <h1 className="text-4xl font-bold">
@@ -53,27 +55,27 @@ function Microfrontends() {
       <div style={{ margin: "20px 0" }}>
         <h2>Navbar MFE:</h2>
         <MFEWrapper
-          remoteName="navbar"
-          exposedModule="mount"
           config={navbarConfig}
+          exposedModule="mount"
+          remoteName="navbar"
         />
       </div>
 
       <div style={{ margin: "20px 0" }}>
         <h2>Dropdown MFE:</h2>
         <MFEWrapper
-          remoteName="dropdown"
-          exposedModule="mount"
           config={dropdownConfig}
+          exposedModule="mount"
+          remoteName="dropdown"
         />
       </div>
 
       <div style={{ margin: "20px 0" }}>
         <h2>Button MFE:</h2>
         <MFEWrapper
-          remoteName="button"
-          exposedModule="mount"
           config={buttonConfig}
+          exposedModule="mount"
+          remoteName="button"
         />
       </div>
     </div>

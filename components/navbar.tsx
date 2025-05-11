@@ -10,76 +10,66 @@ import {
   NavbarMenuItem,
 } from "@heroui/navbar";
 import { Link } from "@heroui/link";
+import { useState } from "react";
+
 import { ThemeSwitch } from "@/components/theme-switch";
 import { LanguageSwitcher } from "@/components/language-switcher";
-import {
-  GitlabIcon,
-  LinkedinIcon,
-} from "@/components/icons";
+import { GitlabIcon, LinkedinIcon } from "@/components/icons";
 import { personalData } from "@/config/personal-data";
 import { useTranslation } from "@/hooks/useTranslation";
 
 export const Navbar = () => {
   const { t } = useTranslation("navbar");
-  
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
-    <NextUINavbar maxWidth="xl" position="sticky" className="bg-secondary-100/80 dark:bg-secondary-900/80 shadow-md z-50">
+    <NextUINavbar
+      className="bg-secondary-100/80 dark:bg-secondary-900/80 shadow-md z-50"
+      isMenuOpen={isMenuOpen}
+      maxWidth="xl"
+      position="sticky"
+      onMenuOpenChange={setIsMenuOpen}
+    >
       <NavbarContent className="sm:hidden" justify="start">
         <NavbarMenuToggle />
       </NavbarContent>
 
       <NavbarContent className="sm:hidden pr-3" justify="center">
         <NavbarBrand>
-          <p className="font-bold text-transparent bg-clip-text bg-gradient-to-b from-primary to-secondary">Juan Daniel</p>
+          <p className="font-bold text-transparent bg-clip-text bg-gradient-to-b from-primary to-secondary">
+            Juan Daniel
+          </p>
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarBrand>
-          <p className="font-bold text-transparent bg-clip-text bg-gradient-to-b from-primary to-secondary">Juan Daniel</p>
+          <p className="font-bold text-transparent bg-clip-text bg-gradient-to-b from-primary to-secondary">
+            Juan Daniel
+          </p>
         </NavbarBrand>
         <NavbarItem className="hidden lg:flex">
-          <Link
-            className="text-foreground"
-            href="/"
-            size="lg"
-          >
+          <Link className="text-foreground" href="/" size="lg">
             {t("home")}
           </Link>
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">
-          <Link
-            className="text-foreground"
-            href="#about"
-            size="lg"
-          >
+          <Link className="text-foreground" href="#about" size="lg">
             {t("about")}
           </Link>
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">
-          <Link
-            className="text-foreground"
-            href="#projects"
-            size="lg"
-          >
+          <Link className="text-foreground" href="#projects" size="lg">
             {t("projects")}
           </Link>
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">
-          <Link
-            className="text-foreground"
-            href="#hobbies"
-            size="lg"
-          >
+          <Link className="text-foreground" href="#hobbies" size="lg">
             {t("hobbies")}
           </Link>
         </NavbarItem>
         <NavbarItem className="hidden lg:flex">
-          <Link
-            className="text-foreground"
-            href="#contact"
-            size="lg"
-          >
+          <Link className="text-foreground" href="#contact" size="lg">
             {t("contact")}
           </Link>
         </NavbarItem>
@@ -106,6 +96,9 @@ export const Navbar = () => {
             href="/"
             size="lg"
             title={t("home")}
+            onPress={() => {
+              setIsMenuOpen(false);
+            }}
           >
             {t("home")}
           </Link>
@@ -117,6 +110,9 @@ export const Navbar = () => {
             href="#about"
             size="lg"
             title={t("about")}
+            onPress={() => {
+              setIsMenuOpen(false);
+            }}
           >
             {t("about")}
           </Link>
@@ -128,6 +124,9 @@ export const Navbar = () => {
             href="#projects"
             size="lg"
             title={t("projects")}
+            onPress={() => {
+              setIsMenuOpen(false);
+            }}
           >
             {t("projects")}
           </Link>
@@ -139,6 +138,9 @@ export const Navbar = () => {
             href="#hobbies"
             size="lg"
             title={t("hobbies")}
+            onPress={() => {
+              setIsMenuOpen(false);
+            }}
           >
             {t("hobbies")}
           </Link>
@@ -150,6 +152,9 @@ export const Navbar = () => {
             href="#contact"
             size="lg"
             title={t("contact")}
+            onPress={() => {
+              setIsMenuOpen(false);
+            }}
           >
             {t("contact")}
           </Link>

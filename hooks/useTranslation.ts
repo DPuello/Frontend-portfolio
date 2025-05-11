@@ -12,10 +12,14 @@ export const useTranslation = (namespace?: string) => {
    * @param returnObject Si es true, devuelve el objeto completo en lugar de convertirlo a string
    * @returns Texto traducido o el objeto/array completo si returnObject es true
    */
-  const t = (key: string, fallback: any = "", returnObject: boolean = false): any => {
+  const t = (
+    key: string,
+    fallback: any = "",
+    returnObject: boolean = false,
+  ): any => {
     const keys = key.split(".");
     let result = messages[namespace || "default"];
-    
+
     for (const k of keys) {
       if (result && typeof result === "object" && k in result) {
         result = result[k];
@@ -23,17 +27,17 @@ export const useTranslation = (namespace?: string) => {
         return fallback || key;
       }
     }
-    
+
     if (returnObject) {
       return result !== undefined ? result : fallback;
     }
-    
+
     return typeof result === "string" ? result : fallback || key;
   };
 
   return {
     t,
     locale,
-    changeLanguage: setLocale
+    changeLanguage: setLocale,
   };
-}; 
+};
